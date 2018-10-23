@@ -53,13 +53,14 @@ public class ShoppingCart {
   setOrderTotal(dblTotal);
  }
 
- public void deleteCartItem(int index) {
-  try {
-   cartItems.remove(index);
-  } catch (IndexOutOfBoundsException e) {
-    e.printStackTrace();
-  }
+ public void deleteCartItem(int index) throws IndexOutOfBoundsException {
+  cartItems.remove(index);
+ }
 
+
+  public void updateCartItem(int index, int quantity) throws IndexOutOfBoundsException {
+   CartItem cartItem = cartItems.get(index);
+  cartItem.setQuantity(quantity);
  }
 
 }
